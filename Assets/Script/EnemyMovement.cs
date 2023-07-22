@@ -19,8 +19,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float _lookRadius;
     [SerializeField] Animator _animator;
     [SerializeField] AudioSource _audioSource;
+    [SerializeField] string targetTag = "Player";
 
-    public string targetTag = "Player";
     private int currentWaypointIndex = 0;
     private float currentSpeed;
     private bool isPatrolling = true;
@@ -144,8 +144,7 @@ public class EnemyMovement : MonoBehaviour
             _gameover.EndGame();
             Debug.Log("Game Over");
             Debug.Log("Player detected!");
-            // Add your custom logic here...
-            // For example, you could end the game or perform any other action.
+           
         }
     }
     private void OnDrawGizmosSelected()

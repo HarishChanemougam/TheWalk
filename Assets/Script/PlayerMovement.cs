@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             _calculatedDirection.z = 0;
             _animator.SetFloat("InputX", 0);
             _animator.SetFloat("InputZ", 0);
+            PlaySound();
         }
 
         if (_controller.isGrounded) 
@@ -76,11 +77,6 @@ public class PlayerMovement : MonoBehaviour
 
         _controller.Move(_calculatedDirection * Time.deltaTime); 
         OnMove?.Invoke(_calculatedDirection); 
-
-        if(playerInput != null) 
-        {
-            PlaySound();
-        }
     }
 
     private void StartMove(InputAction.CallbackContext obj) 
